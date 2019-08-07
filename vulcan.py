@@ -21,7 +21,4 @@
 #   EscapeChar ~
 #   Tunnel no
 #   TunnelDevice any:any
-#   PermitLocalCommand no
 #   VisualHostKey no
-#   ProxyCommand ssh -q -W %h:%p gateway.example.com
-#   RekeyLimit 1G 1h

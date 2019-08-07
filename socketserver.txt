@@ -1,0 +1,129 @@
+===========================================
+使用ie访问:https://123.101.2.130/welcome.php
+账号/密码:Taiyue_miaohaochong/ytu72#&b;B57BzmM   ULtra@#P123
+
+somc http://137.32.244.23:8081/index.html#/  HA_mhq/HA_mhq0730
+
+=============================================
+WEB: root/XCR9WdVWU
+
+云平台：137.32.118.253:6789 weihu/1qaz!QAZ  taiyue_fm/HnNmsR0t!@#
+
+DB: jdbc:oracle:thin:@172.31.247.109:1521/orcl  hnamr/hnnmr20190402  
+	patrol/Bmc.A189  root/HenteleAMR1)(()_
+	
+修改数据库用户密码：
+ALTER USER hnamr IDENTIFIED BY "HNamr(!730^#)";
+
+ALTER USER NMSDB IDENTIFIED BY "NMSdb(!730^#)";
+
+ALTER USER HNAMR20170905 IDENTIFIED BY "HNamr20170905(!730^#)";
+
+ALTER USER HNTEST IDENTIFIED BY "HNtest(!730^#)";
+
+ALTER USER SYSTEM IDENTIFIED BY "2fwelABTmo5%ohL";
+
+ALTER USER SYS IDENTIFIED BY "DPRUh6NRe$%F!S%b";
+
+passwd oracle  #x^kokji5Xf1!5*v
+	
+expdp hnamr/hnnmr20190402@orcl directory=DATA_PUMP_DIR dumpfile=amr_20190507.dmp logfile=amr_20190507.log tables=AMR_IPINFO,ORG_GROUP
+
+impdp hnamr/hnnmr20190402@orcl directory=DATA_PUMP_DIR dumpfile=xxx.dmp logfile=xxx.log remap_schema=xxx:hnamr  remap_tablespace=xxx:amr   table_exists_action=replace
+
+impdp hnamr/hnnmr20190402@orcl directory=DATA_PUMP_DIR dumpfile=AMR_IPV6_TEST_0508.DMP logfile=amr20190508.log remap_schema=amr_ipv6_test:hnamr  remap_tablespace=amr_ipv6_test:amr table_exists_action=replace
+
+
+=============================server===================================	
+server: 137.32.118.117 172.31.247.107  patrol/Bmc.A189  root/HenteleAMR1)&()_  AMR_sec123!@# /opt/amr1.0.0_server/
+
+AllowUsers root@172.31.247.107
+AllowUsers patrol@172.31.247.107
+======================================================================
+
+云probe: 137.32.56.78:39477 patrol/Bmc.Uw189   root/HenteleNMS1#()_  192.168.90.14  root/Ultra&HenteleNMS1#()_
+
+其他probe: 通过server跳进去
+======================================================================
+probe1: 172.31.247.106  patrol/Bmc.A189 LRVYX&SlnLmX^doh root/HenteleAMR1)^()_  w6d@dNASkyxhJUb# /opt/amr1.0.2_probe/
+
+probe2: 172.31.247.108  patrol/Bmc.A189 1$yKsXvbTNjw*QB& root/HenteleAMR1)*()_  c!nYPYIvuYW6&CGo /opt/amr1.0.2_probe/
+
+probe3: 172.31.246.34   patrol/Bmc.A189 88!1Cldyy0YEssOm root/HenteleAMR1)*()_  3mgkuFucV6Ps3AG6 /opt/amr1.0.2_probe/
+
+probe4: 172.31.246.35   patrol/Bmc.A189 vCdM&B@dyO3mZj&Q root/HenteleAMR1)*()_  COZDUBp6fLdSnqyH /opt/amr1.0.2_probe/
+
+probe5: 172.31.246.36   patrol/Bmc.A189 hfHzFrq0TrJ!BMQ# root/HenteleAMR1)*()_  vQ%LubMB7Z%Hf^y9 /opt/amr1.0.2_probe/
+
+probe6:	172.31.246.37   patrol/Bmc.A189 Qcs8S*pQo$n3uCgC root/HenteleAMR1)*()_  Fpbdj!GayNVKDJt8  /opt/amr1.0.2_probe/
+
+web_db: 172.31.247.109  patrol/Bmc.A189 QGG%k^Xs!7Js5DCO root/HenteleAMR1)(()_  CJ1#SLU6zLbmoShl
+
+#probe7: 172.31.246.38   patrol/Bmc.A189  Qcs8S*pQo$n3uCgC  root/HenteleAMR1)(()_  Fpbdj!GayNVKDJt8  /opt/amr1.0.2_probe/
+
+
+跳板机:  222.85.90.137:36280  ywptzhwg/HenteleNMS1))()_
+		 137.32.118.141:13399 administrator/123$%^QWErty
+
+=============================================
+-A INPUT -s 172.22.141.186/32 -p tcp -m tcp --dport 80 -j ACCEPT
+
+-A INPUT -s 172.31.247.107/32 -p tcp -m tcp --dport 8450 -j ACCEPT
+-A INPUT -s 172.31.247.107/32 -p tcp -m tcp --dport 8471 -j ACCEPT
+-A INPUT -s 172.31.247.107/32 -p tcp -m tcp --dport 8500 -j ACCEPT
+-A INPUT -p tcp -m tcp --dport 8450 -j DROP
+-A INPUT -p tcp -m tcp --dport 8471 -j DROP
+-A INPUT -p tcp -m tcp --dport 8500 -j DROP		 
+
+		 
+==============================================
+待解决问题：
+1、网段IP被占用问题功能说明                  --功能已完成
+2、端口没有被扫到问题排查                    --目前定位是：probe到目前机器网络策略不通
+3、数据库磁盘空间扩容                        --已汇报说明
+4、云上主机扫描需要在云上部署probe探针       --部署已完成，可继续扫描云上主机（已给吴宜珂说明情况）
+5、现在通过电信vpn不能连接至资产管控平台的
+   数据库，是否可协调一台跳板机，方便连接数据库
+6、web页面上显示filtered状态的端口           --方案商讨中
+7、业务系统页面添加所分配的网段列表          --已完成
+8、网段管理导入、添加、编辑很慢，建议优化    --
+9、某些web服务识别不出来是web服务
+
+AMR系统问题：
+1、jerryAmrServer长时间运行，任务有时候会阻塞导致任务执行不完一直处于进行中
+	需要重启服务才行
+2、如果某个探针处于异常状态，如果下发的远程扫描任务中要扫描的ip绑定了该探针
+	则该任务会被阻塞，执行不完，其他任务也会被阻塞
+3、下发的远程扫描任务有时候会出现真实扫描的ip数量和下发的ip数量不一致的情况
+
+222.85.96.152/30
+222.85.91.136/29
+
+123.160.220.152/29
+123.160.220.172/30
+123.160.220.176/28
+222.85.88.144/28
+
+
+云上probe绑定的网段和资产
+171.14.99.0/24
+222.85.88.0/24
+1.193.76.45
+1.193.76.14
+1.193.76.19
+1.193.76.20
+
+==================主机加固================
+密码复杂度
+vi /etc/pam.d/system-auth  ucredit=-1 lcredit=-1 dcredit=-1 ocredit=-1
+vi /etc/login.defs  PASS_MIN_LEN 8  PASS_MAX_DAYS 90
+
+vi /etc/pam.d/login account required lib/security/pam-tally.so deny=5 no-magic-root
+
+vi /etc/profile 修改其中的umask为027
+
+vi /etc/syslog.conf 添加 auth.notice  /var/adm/authlog
+
+vi /etc/profile 在“HISTFILESIZE=”行的下一行增加如下一行:（没有这个参数）TMOUT=600
+
+

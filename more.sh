@@ -7,3 +7,4 @@
    d. 执行 ./init_system.sh
 2、新机器第一次安装需要重启机器
 3、这是干甚呢
+4、newline

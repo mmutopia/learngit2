@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #参数是什么呢？？
 1、部署linux 介质步骤如下：
    a. 用./web_update.sh iam_linux_xxxxxx.rar 
